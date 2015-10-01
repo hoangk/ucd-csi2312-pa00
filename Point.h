@@ -1,3 +1,4 @@
+// The header file is correct. No change
 #ifndef CLUSTERING_POINT_H
 #define CLUSTERING_POINT_H
 
@@ -6,11 +7,13 @@
 namespace Clustering {
 
     class Point {
-        int dim;        // number of dimensions of the point
+    private:
+        int m_Dims;        // number of dimensions of the point
         double *values; // values of the point's dimensions
 
     public:
         Point(int);
+        Point(int, double *);
 
         // Big three: cpy ctor, overloaded operator=, dtor
         Point(const Point &);
@@ -18,9 +21,9 @@ namespace Clustering {
         ~Point();
 
         // Accessors & mutators
-        int getDims() const { return dim; }
-        void setValue(int, double);
-        double getValue(int) const;
+        int getDims() const { return m_Dims; }
+        void setValues(int, double);
+        double getValues(int) const;
 
         // Functions
         double distanceTo(const Point &) const;

@@ -1,3 +1,4 @@
+// the header file is all set. No change
 #ifndef CLUSTERING_CLUSTER_H
 #define CLUSTERING_CLUSTER_H
 
@@ -17,11 +18,11 @@ namespace Clustering {
     };
 
     class Cluster {
-        int size;
-        LNodePtr points;
+        int m_Size;
+        LNodePtr m_Points;
 
     public:
-        Cluster() : size(0), points(nullptr) {};
+        Cluster() : m_Size(0), m_Points(nullptr) {};
 
         // The big three: cpy ctor, overloaded operator=, dtor
         Cluster(const Cluster &);
@@ -32,6 +33,8 @@ namespace Clustering {
         void add(const PointPtr &);
         const PointPtr &remove(const PointPtr &);
 
+        // try
+        void addd(const PointPtr &);
         // Overloaded operators
 
         // IO
