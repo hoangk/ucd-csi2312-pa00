@@ -1,5 +1,4 @@
-// I just implement all the function in the Point.h to this
-// gotta fill in the function definition
+
 #include "Point.h"
 #include <cmath>
 
@@ -95,7 +94,7 @@ namespace Clustering {
             for (int i = 0; i < m_Dims; i++) {
                sum += ((a.values[i] - values[i])*(a.values[i] - values[i]));
             }
-            return sqrt(sum);
+            return sqrt (sum);
         }
         return 0;
     }
