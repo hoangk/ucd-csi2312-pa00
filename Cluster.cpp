@@ -1,6 +1,4 @@
-// I just implement the functions from cluster header file.
-// you may dismiss the comment at the end of this file
-// gotta fill in the operator overloaded definition
+
 
 #include "Cluster.h"
 
@@ -10,7 +8,7 @@
 namespace Clustering
 {
     Cluster::Cluster(const Cluster &cluster) {
-    m_Size = cluster.m_Size;
+        m_Size = cluster.m_Size;
         LNodePtr newCluster = m_Points;
         LNodePtr tempCluster = cluster.m_Points;
         if (m_Size > 0) {
@@ -19,9 +17,10 @@ namespace Clustering
                 newCluster = newCluster->next;
                 tempCluster = tempCluster->next;
             }
+        }
     }
 
-    Cluster &Cluster::operator=(const Cluster &cluster) {
+        Cluster &Cluster::operator=(const Cluster &cluster) {
         return <#initializer#>;
     }
 
@@ -34,33 +33,58 @@ namespace Clustering
         m_Points = nullptr;
     }
 
-    void Cluster::addd(PointPtr const &ptr)
+    void Cluster::add(PointPtr const &ptr)
     {
-        LNodePtr newNode;
+        /*LNodePtr newNode;
         newNode->p = ptr;
         newNode->next = m_Points->next;
         m_Points->next = newNode;
+        m_Size++;*/
 
-    }
-
-    void Cluster::add(PointPtr const &ptr)
-    {
-        LNodePtr newNode = new LNode;
-        newNode->p = ptr;
-        newNode->next = nullptr;
+        LNode * temp = new LNode;
+        temp->p = ptr;
+        temp->next = m_Points;
+        m_Points = temp;
+        m_Size++;
     }
 
 
     const PointPtr &Cluster::remove(PointPtr const &ptr) {
-        return <#initializer#>;
-    }
+        if (m_Size == 0) {
+            std::cout << "there is nothing to delete" << std::endl;
+        }
+        else
 
+            for (int i = 0; i < m_Size; i++) {
+
+                        }
+            }
     std::ostream &Clustering::operator<<(std::ostream &ostream, const Cluster &cluster) {
-        return <#initializer#>;
+        /*
+         *
+         * for (int i = 0; i < point.m_Dims; i++ ) {
+            ostream << point.values[i] << std::endl;
+        }
+        return ostream;
+        */
+
+        //LNodePtr current = cluster;
+        m_Size = cluster.m_Size;
+        LNodePtr newCluster;
+        LNodePtr tempCluster = cluster.m_Points;
+        if (m_Size > 0) {
+            while (tempCluster->next != nullptr) {
+                tempCluster->p = tempCluster->p;
+                newCluster = newCluster->next;
+                tempCluster = tempCluster->next;
+
+            }
+        }
+        return ostream;
     }
 
     std::istream &Clustering::operator>>(std::istream &istream, Cluster &cluster) {
-        return <#initializer#>;
+        return istream;
     }
 
     Cluster &Cluster::operator+=(const Cluster &rhs)
@@ -87,6 +111,7 @@ namespace Clustering
     }
 
     const Cluster Clustering::operator+(const Cluster &lhs, const Cluster &rhs) {
+
         return Clustering::Cluster();
     }
 
@@ -108,15 +133,8 @@ namespace Clustering
 
 }
 
-    void Cluster::add(PointPtr const &ptr) {
-        for (int i = 0; i < m_Size; i ++) {}
-        LNodePtr prev = m_Points;
-        for (LNodePtr curr = m_Points; curr != nullptr; curr = curr->next)
-        {
 
-        }
-    }
-}
+
 
 /*
 
