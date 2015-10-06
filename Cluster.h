@@ -1,4 +1,4 @@
-// the header file is all set. No change
+
 #ifndef CLUSTERING_CLUSTER_H
 #define CLUSTERING_CLUSTER_H
 
@@ -6,8 +6,8 @@
 
 namespace Clustering {
 
-    typedef Point *PointPtr;
-    typedef struct LNode *LNodePtr;
+    typedef Point* PointPtr;
+    typedef struct LNode* LNodePtr;
 
 //    struct LNode;
 //    typedef LNode *LNodePtr;
@@ -33,8 +33,6 @@ namespace Clustering {
         void add(const PointPtr &);
         const PointPtr &remove(const PointPtr &);
 
-        // try
-        void addd(const PointPtr &);
         // Overloaded operators
 
         // IO
