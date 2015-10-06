@@ -1,4 +1,4 @@
-// The header file is correct. No change
+
 #ifndef CLUSTERING_POINT_H
 #define CLUSTERING_POINT_H
 
